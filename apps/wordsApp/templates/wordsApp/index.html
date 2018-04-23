@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Add Words to Sessio!</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'wordsApp/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id = "addSessions">
+            <form action = "/process" method = "post">
+                {% csrf_token %}
+                <h3>Add a new word</h3>
+                <br><input type = "text" name = "word"></br>
+                <br><input type = "radio" name = "color" value = "red">Red</br>
+                <br><input type = "radio" name = "color" value = "green">Green</br>
+                <br><input type = "radio" name = "color" value = "blue">Blue</br>
+                <br><input type = "checkbox" name = "font" value = "bold">Show in BIG fonts!</br>
+                <br><input type = "submit" name = "Submit" value = "Add to Session">
+            </form> 
+        </div>
+        <div id = "sessions">
+            <form action = "/clear" method = "post">
+            {% csrf_token %}
+            <input type = "submit" name = "clear" value = "Clear Session">
+            </form>
+                {%for elem in request.session.my_list%}
+                    <br><h2 style = "color:{{elem.color}}; font-weight:{{elem.font}}">{{elem.word}}</h2>
+                    <h3> {{elem.time}}</h3></br>
+                {%endfor%}         
+            </div>
+        </div>
+    </body>
+</html>

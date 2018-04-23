@@ -1,0 +1,25 @@
+#addSessions{
+    padding: 15px;
+    margin: 20px;
+    width: 500px;
+    display: inline-block;
+    border: 1px blue solid;
+    vertical-align:top;
+    clear:both;
+}
+#sessions{
+    padding: 15px;
+    margin: 20px;
+    width: 500px;
+    display: inline-block;
+    border: 1px blue solid;
+    vertical-align:top;
+    clear:both;
+}
+#sessions h2{
+    display: inline-block;
+}
+#sessions h3{
+    float: right;
+    display: inline-block;
+}
